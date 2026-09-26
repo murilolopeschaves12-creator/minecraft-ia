@@ -1,50 +1,61 @@
-```css
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    min-height: 100vh;
-    background: #121212;
-    color: #f1f1f1;
     font-family: Arial, sans-serif;
+    background: #1b1b1b;
+    color: white;
 }
 
 .app {
-    width: min(1000px, 100%);
+    width: 100%;
+    max-width: 900px;
     height: 100vh;
     margin: auto;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    background: #252525;
 }
 
 header {
-    padding-bottom: 15px;
+    padding: 20px;
+    text-align: center;
+    background: #111;
+    border-bottom: 2px solid #3fa34d;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 28px;
+    margin: 0 0 5px;
 }
 
 header span {
-    display: block;
     color: #aaa;
-    margin-top: 5px;
 }
 
 #chat {
     flex: 1;
     overflow-y: auto;
-    background: #1e1e1e;
-    border-radius: 12px;
     padding: 20px;
 }
 
 .message {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    max-width: 80%;
+    white-space: pre-wrap;
+}
+
+.message.ai {
+    background: #303030;
+    margin-right: auto;
+}
+
+.message.user {
+    background: #3fa34d;
+    margin-left: auto;
 }
 
 .author {
@@ -52,67 +63,46 @@ header span {
     margin-bottom: 6px;
 }
 
-.user .author {
-    color: white;
-}
-
-.ai .author {
-    color: #7ee69b;
-}
-
 .text {
-    white-space: pre-wrap;
     line-height: 1.5;
-    color: #ddd;
 }
 
-#form {
+form {
     display: flex;
     gap: 10px;
-    margin-top: 12px;
+    padding: 15px;
+    background: #111;
 }
 
 #input {
     flex: 1;
+    padding: 12px;
     border: none;
-    outline: none;
     border-radius: 8px;
-    background: #252525;
-    color: white;
-    padding: 14px;
     font-size: 16px;
+    outline: none;
 }
 
 button {
+    padding: 12px 20px;
     border: none;
     border-radius: 8px;
-    background: #2d7d46;
+    background: #3fa34d;
     color: white;
-    font-weight: bold;
-    padding: 0 25px;
+    font-size: 16px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #399457;
+    background: #2f8139;
 }
 
 @media (max-width: 600px) {
-
-    .app {
-        padding: 12px;
+    .message {
+        max-width: 95%;
     }
 
     header h1 {
-        font-size: 23px;
-    }
-
-    #form {
-        flex-direction: column;
-    }
-
-    button {
-        padding: 13px;
+        font-size: 24px;
     }
 }
-```
